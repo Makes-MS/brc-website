@@ -1,0 +1,111 @@
+@import "vars";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $main-blue;
+}
+
+.login {
+    position: relative;
+    height: 100vh;
+}
+
+.login__window {
+    background-color: #fff;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    -webkit-box-shadow: 0px 6px 19px -3px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 6px 19px -3px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 6px 19px -3px rgba(34, 60, 80, 0.1);
+
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.login__form>input {
+    font-family: "Montserrat", serif;
+    margin-top: 10px;
+    border: solid 1px rgb(233, 233, 233);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.login__form>button {
+    margin-top: 40px;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-family: "Montserrat", serif;
+    background-color: $main-blue;
+    color: white;
+    cursor: pointer;
+}
+
+.cab__logo {
+    width: 70px;
+}
+
+.cab__logo img {
+    width: 100%;
+}
+
+.login__title {
+    font-size: 16px;
+    user-select: none;
+}
+
+.remember {
+    text-align: center;
+    margin-top: 10px;
+    user-select: none;
+}
+
+
+
+.info__line {
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    user-select: none;
+}
+
+
+
+.info__text {
+    flex: 1 1 auto;
+    margin-left: 30px;
+    font-size: 16px;
+    user-select: none;
+}
+
+.download__app button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-family: "Montserrat", serif;
+    background-color: $main-blue;
+    color: white;
+    cursor: pointer;
+}

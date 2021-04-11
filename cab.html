@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Мій кабінет</title>
+	<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900&display=swap&subset=cyrillic"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/cab.min.css">
+	<link rel="stylesheet" href="css/round-progress-bar.css">
+	<link rel="stylesheet" href="css/requests.css">
+
+</head>
+
+<body>
+
+	<section class="blue-bg">
+
+
+		<div class="main-box">
+
+			<div class="program">
+				<input type="radio" name="tab" id="main" checked>
+				<label for="main"><i class="fas fa-home fa-icon"></i>Статистика</label>
+
+				<input type="radio" name="tab" id="zayavky">
+				<label for="zayavky"><i class="fas fa-list fa-icon"></i>Заявки</label>
+
+				<input type="radio" name="tab" id="podaty">
+				<label for="podaty"><i class="fas fa-edit fa-icon"></i>Архів заявок</label>
+
+				<!-- <input type="radio" name="tab" id="stats">
+				<label for="stats"><i class="fas fa-chart-area fa-icon"></i>Статистика</label>
+
+				<input type="radio" name="tab" id="zvit">
+				<label for="zvit"><i class="far fa-file-alt fa-icon"></i>Звітність</label> -->
+
+				<input type="radio" name="tab" id="exit">
+				<label for="exit"><i class="fas fa-sign-out-alt fa-icon"></i>Вихід</label>
+
+
+				<!---------------Контент--------------->
+
+				<div class="content">
+					<div class="main">
+						<div class="kpi-box">
+							<div class="pie-div">
+								<canvas id="pie-chart" height="6vw" width="6vw"></canvas>
+								<p class="all-hours-text">60</p>
+								<p class="hours-word">годин</p>
+								<p class="pie-title">Доступно годин за договором в
+									поточному місяці</p>
+							</div>
+							<div class="graph-full">
+								<canvas id="myChartFull" height="3vw" width="5vw"></canvas>
+								<p class="graph-full-title">Загальна кількість годин за
+									договором</p>
+							</div>
+
+						</div>
+						<div class="zayavka">
+							<p></p>
+
+						</div>
+						<div class="graph">
+							<canvas id="myChart" height="6vw" width="16vw"></canvas>
+						</div>
+					</div>
+					<div class="zayavky">
+						<div class="requests__box">
+							<div class="request" id="request">
+							</div>
+						</div>
+
+					</div>
+					<div class="podaty" id="podaty">
+						<p>Подача!</p>
+					</div>
+					<!-- <div class="stats">
+						<p>Стат!</p>
+					</div> -->
+					<div class="exit">
+						<p>Привытыкы exit!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="menu">
+				<div class="brc-logo">
+					<img src="img/logo%20brC.png" height="40px" alt="best-run Consulting">
+				</div>
+
+				<div class="account__logo">
+					<img src="/img/rhenus_logo.png" alt="company logo" class="account__img">
+					<p class="company__name">Rhenus <br> Revival</p>
+				</div>
+
+
+
+				<div class="buttons-block">
+					<button class="language-settings">
+						Ua
+					</button>
+					<button class="language-settings">
+						<i class="fas fa-cog"></i>
+					</button>
+				</div>
+				<div class="clock"></div>
+				<div class="dates"></div>
+			</div>
+		</div>
+	</section>
+
+	<!------------Скрипт годинника та дати--------------->
+
+	<script>
+		var clock = document.querySelector('.clock')
+		var dates = document.querySelector('.dates')
+
+		function time() {
+			var date = new Date();
+			var hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+			var min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			var sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+			var localTime = date.toLocaleDateString();
+			clock.innerHTML = `${hours}:${min}`;
+			dates.innerHTML = date.toLocaleDateString();
+		}
+
+		setInterval(time, 1000);
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="https://kit.fontawesome.com/e7e4e7040c.js" crossorigin="anonymous"></script>
+	<script src="js/chart.js"></script>
+	<script src="js/requests.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+.footer {
+    width: 100%;
+    background-color: $light-gray;
+    padding: 50px 0 20px 0;
+}
+
+.footer__main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.footer__main-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1 1 50%;
+}
+
+.footer__list {
+    list-style: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer__list a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer__list li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer__main-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 50%
+}
+
+.footer__main-contacts p {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer__main-contacts a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: $main-blue;
+    font-size: 14px;
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0 0;
+    border-top: solid 1px rgb(206, 206, 206);
+    margin-top: 50px;
+}
+.copyright__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.copyright__leftside {
+    display: flex;
+}
+
+
+.copyright__rightside {
+    display: flex;
+}
+
+.copyright__rightside div,
+.copyright__leftside div {
+    padding: 0 20px;
+    border-right: solid 1px rgb(206, 206, 206);
+}
+
+.copyright__rightside div:last-child,
+.copyright__leftside div:last-child {
+    padding: 0 20px;
+    border: none
+}
+
+// Адаптація
+
+.has-dropdown > a {
+    text-decoration: none;
+    color: $text-gray;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@media (max-width: 767px) {
+    .copyright__body {
+        font-size: 10px;
+    }
+
+    .footer__main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer__main-list {
+        flex-direction: column;
+        // padding: 0 30px;
+        margin-bottom: 30px;
+    }   
+
+    .footer__list {
+        height: 0;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        padding: 0 30px;
+    }
+
+    .footer__list li {
+        margin-bottom: 12px;
+    }
+
+    .has-dropdown > a {
+        display: block;
+        border-top: rgb(224, 224, 224) 1px solid;
+        border-bottom: rgb(224, 224, 224) 1px solid;
+        padding: 10px 0 10px 30px;
+        background-color: white;
+    }
+
+    .has-dropdown._active .footer__list {
+        height: auto;
+        overflow: auto;
+    }
+
+    .copyright__body {
+        flex-wrap: nowrap;
+    }
+    
+    .copyright__rightside {
+        flex-wrap: wrap;
+    }
+}
